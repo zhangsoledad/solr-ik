@@ -7,7 +7,7 @@
 </analyzer>
 ```
 
- *useSmart*参数 － 分词模式 , IK支持 细粒度切分 和 智能切分, 设置为true使用智能切分，false为细粒度切分。在[sunspot](http://sunspot.github.io/)中实际使用下来，将index和query的 *useSmart* 设置为false，即使用细粒度切分模式效果最佳，具体视需求而定，详细可参见IK手册。
+`useSmart`参数 － 分词模式 , IK支持 细粒度切分 和 智能切分, 设置为true使用智能切分，false为细粒度切分。在[sunspot](http://sunspot.github.io/)中实际使用下来，将index和query的 *useSmart* 设置为false，即使用细粒度切分模式效果最佳，具体视需求而定，详细可参见IK手册。
   
 Solr提供一些filter对英文进行分词，原IK分词器会将英文大写转化成小写，tokenizer会先于filter致使filter无效，已在源码中修正，使用filter进行一些配置可以对英文进行词干提取和驼峰分词，如LoveLive会被分成love live 
 
@@ -33,7 +33,7 @@ Solr提供一些filter对英文进行分词，原IK分词器会将英文大写�
 
 在`org.wltea.analyzer.cfg`下class`DefaultConfig`中可设置参看`PATH_DIC_MAIN`主词典路径和`PATH_DIC_QUANTIFIER`量词路径。
 
-IK支持自定义扩展词库，可以在IKAnalyzer.cfg.xml中配置添加，目前我们网站就是将商品和用户信息导出为词库，并在后台任务中维护，[杉果商场](http://www.sonkwo.com/store/search?utf8=%E2%9C%93&q=&button=)
+IK支持自定义扩展词库，可以在IKAnalyzer.cfg.xml中配置添加.
 
 ##Acknowledgements 
 感谢IK Analyzer分词器的开发者[林良益](http://linliangyi2007.iteye.com/ )
